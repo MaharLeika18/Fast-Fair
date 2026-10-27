@@ -86,5 +86,15 @@ you **Approve** or **Request changes**.
 
 1. Which accessibility fix would a sighted mouse user never notice but a
    screen-reader or keyboard user depends on? Why?
+      The structure and control changes such as the element landmarks. While users 
+      will never know what each element is assigned as internally, screen-readers
+      will and using the incorrect elements can disrupt or cause them to malfunction.
+      Likewise, using button elements instead of divs will not change anything visually
+      but will ensure that they can be interactable without needing a mouse. 
+
 2. Your pipeline runs the Week 16 checks automatically now. How does that stop a
    teammate from *accidentally* shipping an inaccessible page six weeks from now?
+      It autonomously stops any merges from happening if it does not pass all the 
+      checks. This means there won't be a need to rollback faulty code if it is 
+      rejected before it is even merged in the first place. Only functional code 
+      can be merged and deployed. 
