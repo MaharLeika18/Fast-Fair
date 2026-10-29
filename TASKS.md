@@ -82,15 +82,20 @@ you **Approve** or **Request changes**.
 
 ---
 
-## Reflection (answer in 3–4 sentences)
+## Reflection
 
 1. Which accessibility fix would a sighted mouse user never notice but a
    screen-reader or keyboard user depends on? Why?
+
+   Replacing the fake login `<div>` with a real `<button>` is a fix that a
+   sighted mouse user might not notice. A keyboard user can focus and activate
+   the button with the keyboard, and a screen reader announces its role and
+   name correctly. This makes the login form usable without relying on a mouse.
+
 2. Your pipeline runs the Week 16 checks automatically now. How does that stop a
    teammate from *accidentally* shipping an inaccessible page six weeks from now?
 
-The real labels and the keyboard-friendly button are fixes that a sighted mouse user
-might not notice. They help screen-reader users understand the form and let keyboard
-users log in without needing a mouse. The pipeline runs the checks every time code is
-pushed or a pull request is opened. This helps catch accessibility problems before they
-are accidentally merged.
+   The pipeline runs the accessibility tests on every push and pull request.
+   If someone removes a label or changes the contrast to an unsafe color, the
+   tests fail and the pull request cannot be safely merged. This gives the team
+   an automatic reminder to fix the problem before it reaches users.
